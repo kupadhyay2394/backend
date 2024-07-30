@@ -1,5 +1,5 @@
 import mongoose, {Schema} from "mongoose"
-passward
+
 import jwt from "jsonwebtoken"
 import bcrypt from "bcrypt"
 const uesrSchema=new Schema({
