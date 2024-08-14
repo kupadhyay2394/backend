@@ -16,6 +16,11 @@ app.use(express.urlencoded({extended:true,limit:"16kb"}))                       
 app.use(express.static("publilc"))                                              //to store image file in puclic
 app.use(cookieParser())                                                         //to store cokkies at server                    
 
+//routes
+import userRouter from './routes/user.routes.js';
+
+//routes decleration
+app.use("/api/v1/users",userRouter)    //best practice to use api and v1
 
 
 
