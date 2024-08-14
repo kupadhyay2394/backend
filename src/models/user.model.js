@@ -61,10 +61,10 @@ const uesrSchema=new Schema({
 )
 
 //it is hook use to the pre function like storing the password
-userSchema.pre("save", function(next) {
-    if(this.isModified("password")) return next();
+userSchema.pre("save", async function(next) {
+    if(!this.isModified("password")) return next();
 
-    this.password=bcrypt.hash(this.password,10)
+    this.password= await bcrypt.hash(this.password,10)
     next()
 })
 userSchema.methods.isPasswordCorrect=async function(passward){
