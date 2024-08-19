@@ -2,7 +2,7 @@ import mongoose, {Schema} from "mongoose"
 
 import jwt from "jsonwebtoken"
 import bcrypt from "bcrypt"
-const uesrSchema=new Schema({
+const userSchema=new Schema({
     username:{
         type:String,
         required:true,
@@ -84,6 +84,7 @@ userSchema.methods.genrateAccesToken=function(){
         }
     )
 }
+//
 userSchema.methods.genrateRefreshToken=function(){
     return jwt.sign(
         {
